@@ -1,13 +1,15 @@
 import React from "react";
-import { useNavigate } from "react-router-dom";
+import { Navigate } from "react-router-dom";
 
-export const ProtectedRoute: React.FC<{ children: React.ReactNode }> = ({ children }) => {
-    const Navigate = useNavigate();
-    const userDetails = localStorage.getItem('userDetails');
+const ProtectedRoute: React.FC<{ children: React.ReactNode }> = ({ children }) => {
+  const userDetails = localStorage.getItem('userDetails');
 
-    if (!userDetails) {
-      alert('Please enter your details before accessing this page.');
-      return Navigate('/');
-    }
-    return <>{children}</>;
-  };
+  if (!userDetails) {
+    alert('Please enter your details before accessing this page.');
+    return <Navigate to="/" />;
+  }
+
+  return <>{children}</>;
+};
+
+export default ProtectedRoute;
