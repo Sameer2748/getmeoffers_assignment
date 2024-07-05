@@ -2,7 +2,7 @@
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
--Run these command to run in your computer:
+Run these command to run in your computer:
 -npm install
 -npm run dev
 
